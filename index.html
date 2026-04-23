@@ -7,166 +7,199 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root[data-theme="dark"] {
-    --bg: #080808; --bg2: #111111; --bg3: #1a1a1a; --bg4: #222222;
-    --border: #2a2a2a; --border2: #333;
-    --text: #f0f0f0; --text2: #888; --text3: #555;
-    --lime: #c6f135; --lime2: #9bbf1a;
-    --lime-dim: rgba(198,241,53,0.1); --lime-dim2: rgba(198,241,53,0.05);
-    --red: #ff4444; --red-dim: rgba(255,68,68,0.1);
-    --card: #111111; --card-border: #222;
+    --bg:#080808;--bg2:#111111;--bg3:#1a1a1a;--bg4:#222222;
+    --border:#2a2a2a;--border2:#333;
+    --text:#f0f0f0;--text2:#888;--text3:#555;
+    --lime:#c6f135;--lime2:#9bbf1a;
+    --lime-dim:rgba(198,241,53,0.1);--lime-dim2:rgba(198,241,53,0.05);
+    --red:#ff4444;--red-dim:rgba(255,68,68,0.1);
+    --card:#111111;--card-border:#222;
   }
   :root[data-theme="light"] {
-    --bg: #f4f4f0; --bg2: #ebebE6; --bg3: #e0e0da; --bg4: #d4d4ce;
-    --border: #d0d0ca; --border2: #c0c0ba;
-    --text: #0a0a0a; --text2: #555; --text3: #999;
-    --lime: #5a8a00; --lime2: #3d6000;
-    --lime-dim: rgba(90,138,0,0.1); --lime-dim2: rgba(90,138,0,0.05);
-    --red: #cc2222; --red-dim: rgba(204,34,34,0.08);
-    --card: #ffffff; --card-border: #ddddd8;
+    --bg:#f4f4f0;--bg2:#ebebE6;--bg3:#e0e0da;--bg4:#d4d4ce;
+    --border:#d0d0ca;--border2:#c0c0ba;
+    --text:#0a0a0a;--text2:#555;--text3:#999;
+    --lime:#5a8a00;--lime2:#3d6000;
+    --lime-dim:rgba(90,138,0,0.1);--lime-dim2:rgba(90,138,0,0.05);
+    --red:#cc2222;--red-dim:rgba(204,34,34,0.08);
+    --card:#ffffff;--card-border:#ddddd8;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; transition: background 0.3s, color 0.3s; }
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:background 0.3s,color 0.3s;}
+  ::-webkit-scrollbar{width:4px;}
+  ::-webkit-scrollbar-track{background:var(--bg);}
+  ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
 
-  .header { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
-  .logo { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 0.06em; color: var(--lime); }
-  .logo span { color: var(--text); }
-  .header-right { display: flex; align-items: center; gap: 12px; }
-  .day-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text2); background: var(--bg3); border: 1px solid var(--border); padding: 4px 10px; border-radius: 4px; }
-  .theme-btn { background: var(--bg3); border: 1px solid var(--border); color: var(--text); width: 36px; height: 36px; border-radius: 6px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
-  .theme-btn:hover { border-color: var(--lime); }
-  .switch-user-btn { background: none; border: 1px solid var(--border); color: var(--text2); font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 6px 14px; border-radius: 6px; cursor: pointer; transition: all 0.15s; }
-  .switch-user-btn:hover { border-color: var(--lime); color: var(--lime); }
+  .header{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
+  .logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.06em;color:var(--lime);}
+  .logo span{color:var(--text);}
+  .header-right{display:flex;align-items:center;gap:12px;}
+  .day-badge{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text2);background:var(--bg3);border:1px solid var(--border);padding:4px 10px;border-radius:4px;}
+  .theme-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text);width:36px;height:36px;border-radius:6px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+  .theme-btn:hover{border-color:var(--lime);}
+  .switch-user-btn{background:none;border:1px solid var(--border);color:var(--text2);font-family:'DM Sans',sans-serif;font-size:13px;padding:6px 14px;border-radius:6px;cursor:pointer;transition:all 0.15s;}
+  .switch-user-btn:hover{border-color:var(--lime);color:var(--lime);}
 
-  .app { display: none; }
-  .app.visible { display: block; }
-  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .app{display:none;}
+  .app.visible{display:block;}
+  .container{max-width:900px;margin:0 auto;padding:2rem 1.5rem;}
 
-  .nav-tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 2rem; overflow-x: auto; }
-  .tab { font-size: 13px; font-weight: 500; color: var(--text2); background: none; border: none; border-bottom: 2px solid transparent; padding: 12px 20px; cursor: pointer; white-space: nowrap; transition: all 0.2s; }
-  .tab:hover { color: var(--text); }
-  .tab.active { color: var(--lime); border-bottom-color: var(--lime); }
+  .nav-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:2rem;overflow-x:auto;}
+  .tab{font-size:13px;font-weight:500;color:var(--text2);background:none;border:none;border-bottom:2px solid transparent;padding:12px 18px;cursor:pointer;white-space:nowrap;transition:all 0.2s;}
+  .tab:hover{color:var(--text);}
+  .tab.active{color:var(--lime);border-bottom-color:var(--lime);}
 
-  .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 10px; padding: 1.5rem; margin-bottom: 1.25rem; }
-  .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
-  .card-title { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.05em; color: var(--text); }
+  .card{background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.5rem;margin-bottom:1.25rem;}
+  .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;}
+  .card-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.05em;color:var(--text);}
 
-  #loading-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1rem; }
-  .loading-logo { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--lime); letter-spacing: 0.06em; }
-  .loading-text { font-size: 13px; color: var(--text3); animation: pulse 1.5s infinite; }
-  @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+  #loading-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;}
+  .loading-logo{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--lime);letter-spacing:0.06em;}
+  .loading-text{font-size:13px;color:var(--text3);animation:pulse 1.5s infinite;}
+  @keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
 
-  #onboarding { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
-  .onboard-box { max-width: 460px; width: 100%; text-align: center; }
-  .onboard-logo { font-family: 'Bebas Neue', sans-serif; font-size: 64px; letter-spacing: 0.06em; color: var(--lime); line-height: 1; margin-bottom: 0.5rem; }
-  .onboard-sub { font-size: 14px; color: var(--text2); margin-bottom: 3rem; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; }
+  #onboarding{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;}
+  .onboard-box{max-width:460px;width:100%;text-align:center;}
+  .onboard-logo{font-family:'Bebas Neue',sans-serif;font-size:64px;letter-spacing:0.06em;color:var(--lime);line-height:1;margin-bottom:0.5rem;}
+  .onboard-sub{font-size:14px;color:var(--text2);margin-bottom:3rem;letter-spacing:0.04em;text-transform:uppercase;font-weight:500;}
 
-  .input-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text2); text-align: left; display: block; margin-bottom: 8px; }
-  .input-field { width: 100%; background: var(--bg2); border: 1px solid var(--border2); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 15px; padding: 14px 16px; border-radius: 8px; outline: none; transition: border-color 0.2s; margin-bottom: 1rem; }
-  .input-field:focus { border-color: var(--lime); }
-  .input-field::placeholder { color: var(--text3); }
-  textarea.input-field { resize: vertical; min-height: 90px; }
+  .input-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text2);text-align:left;display:block;margin-bottom:8px;}
+  .input-field{width:100%;background:var(--bg2);border:1px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;padding:14px 16px;border-radius:8px;outline:none;transition:border-color 0.2s;margin-bottom:1rem;}
+  .input-field:focus{border-color:var(--lime);}
+  .input-field::placeholder{color:var(--text3);}
+  textarea.input-field{resize:vertical;min-height:90px;}
 
-  .btn-lime { width: 100%; background: var(--lime); color: #0a0a0a; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.08em; border: none; border-radius: 8px; padding: 14px; cursor: pointer; transition: all 0.15s; margin-top: 0.5rem; }
-  .btn-lime:hover { background: var(--lime2); transform: translateY(-1px); }
-  .btn-lime:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-lime{width:100%;background:var(--lime);color:#0a0a0a;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.08em;border:none;border-radius:8px;padding:14px;cursor:pointer;transition:all 0.15s;margin-top:0.5rem;}
+  .btn-lime:hover{background:var(--lime2);transform:translateY(-1px);}
+  .btn-lime:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
 
-  .or-divider { display: flex; align-items: center; gap: 12px; margin: 1.5rem 0; color: var(--text3); font-size: 12px; }
-  .or-divider::before, .or-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-  .member-list-onboard { display: flex; flex-direction: column; gap: 8px; max-height: 220px; overflow-y: auto; }
-  .member-pick-btn { background: var(--bg2); border: 1px solid var(--border); color: var(--text); padding: 12px 16px; border-radius: 8px; cursor: pointer; text-align: left; font-family: 'DM Sans', sans-serif; font-size: 14px; display: flex; align-items: center; gap: 12px; transition: all 0.15s; }
-  .member-pick-btn:hover { border-color: var(--lime); background: var(--lime-dim2); }
-  .mpb-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--lime-dim); color: var(--lime); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0; }
+  .or-divider{display:flex;align-items:center;gap:12px;margin:1.5rem 0;color:var(--text3);font-size:12px;}
+  .or-divider::before,.or-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+  .member-list-onboard{display:flex;flex-direction:column;gap:8px;max-height:220px;overflow-y:auto;}
+  .member-pick-btn{background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:8px;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif;font-size:14px;display:flex;align-items:center;gap:12px;transition:all 0.15s;}
+  .member-pick-btn:hover{border-color:var(--lime);background:var(--lime-dim2);}
+  .mpb-avatar{width:32px;height:32px;border-radius:50%;background:var(--lime-dim);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;}
 
-  #goal-setup { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
-  .goal-box { max-width: 500px; width: 100%; }
-  .goal-title { font-family: 'Bebas Neue', sans-serif; font-size: 48px; letter-spacing: 0.05em; line-height: 1; margin-bottom: 0.5rem; }
-  .goal-title span { color: var(--lime); }
-  .goal-desc { font-size: 14px; color: var(--text2); margin-bottom: 2rem; line-height: 1.6; }
+  #goal-setup{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;}
+  .goal-box{max-width:500px;width:100%;}
+  .goal-title{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:0.05em;line-height:1;margin-bottom:0.5rem;}
+  .goal-title span{color:var(--lime);}
+  .goal-desc{font-size:14px;color:var(--text2);margin-bottom:2rem;line-height:1.6;}
 
-  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 1.25rem; }
-  .stat-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 10px; padding: 1.25rem; text-align: center; }
-  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 0.03em; color: var(--lime); line-height: 1; }
-  .stat-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text2); margin-top: 4px; }
+  .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.25rem;}
+  .stat-card{background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.25rem;text-align:center;}
+  .stat-num{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:0.03em;color:var(--lime);line-height:1;}
+  .stat-label{font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text2);margin-top:4px;}
 
-  .lb-row { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); }
-  .lb-row:last-child { border-bottom: none; }
-  .lb-rank { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text3); width: 24px; text-align: center; flex-shrink: 0; }
-  .lb-rank.top { color: var(--lime); font-weight: 600; }
-  .lb-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--lime-dim); color: var(--lime); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; border: 1px solid var(--border); }
-  .lb-info { flex: 1; min-width: 0; }
-  .lb-name { font-size: 14px; font-weight: 600; color: var(--text); }
-  .lb-goal { font-size: 12px; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
-  .lb-right { text-align: right; flex-shrink: 0; }
-  .streak-badge { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: var(--lime); background: var(--lime-dim); border: 1px solid rgba(198,241,53,0.2); padding: 4px 10px; border-radius: 20px; }
-  .lb-weight { font-size: 11px; color: var(--text3); margin-top: 3px; }
-  .hype-btn { background: none; border: 1px solid var(--border); color: var(--text2); padding: 4px 10px; border-radius: 20px; font-size: 12px; cursor: pointer; transition: all 0.15s; margin-top: 6px; }
-  .hype-btn:hover, .hype-btn.hyped { border-color: var(--lime); color: var(--lime); background: var(--lime-dim); }
+  .lb-row{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);}
+  .lb-row:last-child{border-bottom:none;}
+  .lb-rank{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text3);width:24px;text-align:center;flex-shrink:0;}
+  .lb-rank.top{color:var(--lime);font-weight:600;}
+  .lb-avatar{width:38px;height:38px;border-radius:50%;background:var(--lime-dim);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0;border:1px solid var(--border);}
+  .lb-info{flex:1;min-width:0;}
+  .lb-name{font-size:14px;font-weight:600;color:var(--text);}
+  .lb-goal{font-size:12px;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px;}
+  .lb-pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px;}
+  .lb-pill{font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;border:1px solid var(--border);color:var(--text3);}
+  .lb-pill.bad{border-color:rgba(255,68,68,0.4);color:var(--red);background:var(--red-dim);}
+  .lb-pill.good{border-color:rgba(198,241,53,0.3);color:var(--lime);background:var(--lime-dim);}
+  .lb-right{text-align:right;flex-shrink:0;}
+  .streak-badge{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--lime);background:var(--lime-dim);border:1px solid rgba(198,241,53,0.2);padding:4px 10px;border-radius:20px;}
+  .lb-weight{font-size:11px;color:var(--text3);margin-top:3px;}
+  .hype-btn{background:none;border:1px solid var(--border);color:var(--text2);padding:4px 10px;border-radius:20px;font-size:12px;cursor:pointer;transition:all 0.15s;margin-top:6px;}
+  .hype-btn:hover,.hype-btn.hyped{border-color:var(--lime);color:var(--lime);background:var(--lime-dim);}
 
-  .progress-wrap { margin-top: 8px; }
-  .progress-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--text3); margin-bottom: 5px; }
-  .progress-track { height: 4px; background: var(--bg3); border-radius: 2px; overflow: hidden; }
-  .progress-fill { height: 100%; background: var(--lime); border-radius: 2px; transition: width 0.5s ease; }
+  .progress-wrap{margin-top:8px;}
+  .progress-label{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-bottom:5px;}
+  .progress-track{height:4px;background:var(--bg3);border-radius:2px;overflow:hidden;}
+  .progress-fill{height:100%;background:var(--lime);border-radius:2px;transition:width 0.5s ease;}
 
-  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .form-group { display: flex; flex-direction: column; gap: 6px; }
-  .form-group.full { grid-column: 1 / -1; }
-  .btn-small { background: var(--lime); color: #0a0a0a; font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 0.06em; border: none; border-radius: 6px; padding: 10px 20px; cursor: pointer; transition: all 0.15s; }
-  .btn-small:hover { background: var(--lime2); }
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .form-group{display:flex;flex-direction:column;gap:6px;}
+  .form-group.full{grid-column:1/-1;}
+  .btn-small{background:var(--lime);color:#0a0a0a;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:0.06em;border:none;border-radius:6px;padding:10px 20px;cursor:pointer;transition:all 0.15s;}
+  .btn-small:hover{background:var(--lime2);}
 
-  .log-entry { border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 10px; }
-  .log-entry-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-  .log-day-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: var(--lime); background: var(--lime-dim); padding: 3px 10px; border-radius: 4px; }
-  .delete-btn { background: none; border: 1px solid var(--border); color: var(--text3); width: 28px; height: 28px; border-radius: 6px; cursor: pointer; font-size: 13px; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; }
-  .delete-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-dim); }
-  .log-details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 8px; }
-  .log-detail-label { color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; font-size: 10px; font-weight: 600; margin-bottom: 2px; }
-  .log-detail-val { color: var(--text); font-size: 13px; }
-  .log-notes { font-size: 13px; color: var(--text2); border-top: 1px solid var(--border); padding-top: 8px; margin-top: 4px; }
+  .log-entry{border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:10px;}
+  .log-entry-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+  .log-day-label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--lime);background:var(--lime-dim);padding:3px 10px;border-radius:4px;}
+  .delete-btn{background:none;border:1px solid var(--border);color:var(--text3);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;transition:all 0.15s;flex-shrink:0;}
+  .delete-btn:hover{border-color:var(--red);color:var(--red);background:var(--red-dim);}
+  .log-details{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:8px;}
+  .log-detail-label{color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;font-size:10px;font-weight:600;margin-bottom:2px;}
+  .log-detail-val{color:var(--text);font-size:13px;}
+  .log-notes{font-size:13px;color:var(--text2);border-top:1px solid var(--border);padding-top:8px;margin-top:4px;}
 
-  .chart-wrap { position: relative; height: 160px; margin-top: 1rem; }
+  .chart-wrap{position:relative;height:160px;margin-top:1rem;}
 
-  .profile-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; }
-  .profile-avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--lime-dim); color: var(--lime); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; border: 2px solid var(--lime); flex-shrink: 0; }
-  .profile-name { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 0.05em; }
-  .profile-goal-tag { font-size: 12px; color: var(--text2); background: var(--bg3); border: 1px solid var(--border); padding: 4px 10px; border-radius: 4px; margin-top: 6px; display: inline-block; }
+  .profile-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;}
+  .profile-avatar{width:64px;height:64px;border-radius:50%;background:var(--lime-dim);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;border:2px solid var(--lime);flex-shrink:0;}
+  .profile-name{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:0.05em;}
+  .profile-goal-tag{font-size:12px;color:var(--text2);background:var(--bg3);border:1px solid var(--border);padding:4px 10px;border-radius:4px;margin-top:6px;display:inline-block;}
 
-  .squad-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
-  .squad-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 10px; padding: 1.25rem; cursor: pointer; transition: all 0.15s; position: relative; }
-  .squad-card:hover { border-color: var(--lime); transform: translateY(-2px); }
-  .squad-card-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--lime-dim); color: var(--lime); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; margin-bottom: 12px; }
-  .squad-card-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-  .squad-card-goal { font-size: 12px; color: var(--text2); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .squad-card-streak { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--lime); margin-top: 10px; }
-  .squad-delete-btn { position: absolute; top: 10px; right: 10px; background: none; border: 1px solid var(--border); color: var(--text3); width: 26px; height: 26px; border-radius: 6px; cursor: pointer; font-size: 12px; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
-  .squad-delete-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-dim); }
+  /* SQUAD */
+  .squad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+  .squad-card{background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:1.25rem;cursor:pointer;transition:all 0.15s;position:relative;}
+  .squad-card:hover{border-color:var(--lime);transform:translateY(-2px);}
+  .squad-card.shame{border-color:rgba(255,68,68,0.6)!important;box-shadow:0 0 0 1px rgba(255,68,68,0.2);}
+  .squad-card-avatar{width:44px;height:44px;border-radius:50%;background:var(--lime-dim);color:var(--lime);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin-bottom:12px;}
+  .squad-card-name{font-size:15px;font-weight:600;margin-bottom:4px;}
+  .squad-card-goal{font-size:12px;color:var(--text2);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .squad-card-streak{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--lime);margin-top:10px;}
+  .squad-card-stats{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
+  .squad-stat-pill{font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;border:1px solid var(--border);color:var(--text3);}
+  .squad-stat-pill.bad{border-color:rgba(255,68,68,0.4);color:var(--red);background:var(--red-dim);}
+  .squad-stat-pill.good{border-color:rgba(198,241,53,0.3);color:var(--lime);background:var(--lime-dim);}
+  .squad-delete-btn{position:absolute;top:10px;right:10px;background:none;border:1px solid var(--border);color:var(--text3);width:26px;height:26px;border-radius:6px;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;transition:all 0.15s;}
+  .squad-delete-btn:hover{border-color:var(--red);color:var(--red);background:var(--red-dim);}
 
-  .badges-row { display: flex; flex-wrap: wrap; gap: 8px; }
-  .badge-pill { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; border: 1px solid var(--border); color: var(--text3); }
-  .badge-pill.earned { background: var(--lime-dim); border-color: rgba(198,241,53,0.3); color: var(--lime); }
+  /* CHALLENGES */
+  .challenge-item{border:1px solid var(--border);border-radius:8px;padding:1rem 1.25rem;margin-bottom:10px;display:flex;align-items:center;gap:14px;}
+  .challenge-item.joined{border-color:rgba(198,241,53,0.4);background:var(--lime-dim2);}
+  .challenge-icon{font-size:24px;flex-shrink:0;}
+  .challenge-info{flex:1;}
+  .challenge-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px;}
+  .challenge-desc{font-size:12px;color:var(--text2);line-height:1.5;}
+  .challenge-meta{font-size:11px;color:var(--text3);margin-top:5px;font-family:'JetBrains Mono',monospace;}
+  .challenge-join-btn{background:none;border:1px solid var(--border);color:var(--text2);font-size:12px;padding:7px 16px;border-radius:20px;cursor:pointer;transition:all 0.15s;white-space:nowrap;font-family:'DM Sans',sans-serif;}
+  .challenge-join-btn:hover{border-color:var(--lime);color:var(--lime);}
+  .challenge-join-btn.joined{background:var(--lime-dim);border-color:var(--lime);color:var(--lime);}
 
-  .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text3); }
-  .empty-state .es-icon { font-size: 40px; margin-bottom: 1rem; }
-  .empty-state p { font-size: 14px; line-height: 1.6; }
-  .section-heading { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.05em; margin-bottom: 1rem; }
-  .section-heading span { color: var(--lime); }
+  /* SETTINGS */
+  .settings-section{margin-bottom:2rem;}
+  .settings-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text2);margin-bottom:12px;display:block;}
+  .reminder-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .reminder-time-input{background:var(--bg2);border:1px solid var(--border2);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;padding:10px 14px;border-radius:8px;outline:none;transition:border-color 0.2s;}
+  .reminder-time-input:focus{border-color:var(--lime);}
+  .notif-status{font-size:12px;color:var(--text3);margin-top:8px;}
+  .notif-status.granted{color:var(--lime);}
+  .notif-status.denied{color:var(--red);}
 
-  .danger-zone { border-color: rgba(255,68,68,0.3) !important; }
-  .danger-title { color: var(--red) !important; }
-  .btn-danger { background: none; border: 1px solid var(--red); color: var(--red); font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 8px 18px; border-radius: 6px; cursor: pointer; transition: all 0.15s; }
-  .btn-danger:hover { background: var(--red-dim); }
+  .badges-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .badge-pill{font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;border:1px solid var(--border);color:var(--text3);}
+  .badge-pill.earned{background:var(--lime-dim);border-color:rgba(198,241,53,0.3);color:var(--lime);}
 
-  .toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--lime); color: #0a0a0a; font-size: 13px; font-weight: 600; padding: 12px 20px; border-radius: 8px; z-index: 9999; transform: translateY(80px); opacity: 0; transition: all 0.3s; pointer-events: none; }
-  .toast.show { transform: translateY(0); opacity: 1; }
+  .empty-state{text-align:center;padding:3rem 1rem;color:var(--text3);}
+  .empty-state .es-icon{font-size:40px;margin-bottom:1rem;}
+  .empty-state p{font-size:14px;line-height:1.6;}
+  .section-heading{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.05em;margin-bottom:1rem;}
+  .section-heading span{color:var(--lime);}
 
-  @media (max-width: 600px) {
-    .header { padding: 0 1rem; }
-    .container { padding: 1.5rem 1rem; }
-    .form-grid { grid-template-columns: 1fr; }
-    .profile-header { flex-direction: column; text-align: center; }
-    .day-badge { display: none; }
+  .danger-zone{border-color:rgba(255,68,68,0.3)!important;}
+  .danger-title{color:var(--red)!important;}
+  .btn-danger{background:none;border:1px solid var(--red);color:var(--red);font-family:'DM Sans',sans-serif;font-size:13px;padding:8px 18px;border-radius:6px;cursor:pointer;transition:all 0.15s;}
+  .btn-danger:hover{background:var(--red-dim);}
+
+  .toast{position:fixed;bottom:2rem;right:2rem;background:var(--lime);color:#0a0a0a;font-size:13px;font-weight:600;padding:12px 20px;border-radius:8px;z-index:9999;transform:translateY(80px);opacity:0;transition:all 0.3s;pointer-events:none;}
+  .toast.show{transform:translateY(0);opacity:1;}
+
+  @media(max-width:600px){
+    .header{padding:0 1rem;}
+    .container{padding:1.5rem 1rem;}
+    .form-grid{grid-template-columns:1fr;}
+    .profile-header{flex-direction:column;text-align:center;}
+    .day-badge{display:none;}
+    .challenge-item{flex-direction:column;align-items:flex-start;}
   }
 </style>
 </head>
@@ -219,13 +252,16 @@
       <button class="tab" data-tab="log">Log Today</button>
       <button class="tab" data-tab="myprofile">My Profile</button>
       <button class="tab" data-tab="squad">The Squad</button>
+      <button class="tab" data-tab="challenges">Challenges</button>
+      <button class="tab" data-tab="settings">Settings</button>
     </div>
 
+    <!-- DASHBOARD -->
     <div id="tab-dashboard">
       <div class="stats-row">
         <div class="stat-card"><div class="stat-num" id="stat-day">1</div><div class="stat-label">Day</div></div>
         <div class="stat-card"><div class="stat-num" id="stat-streak">0</div><div class="stat-label">My Streak</div></div>
-        <div class="stat-card"><div class="stat-num" id="stat-members">0</div><div class="stat-label">Members</div></div>
+        <div class="stat-card"><div class="stat-num" id="stat-checkin">0%</div><div class="stat-label">Check-in rate</div></div>
       </div>
       <div class="card">
         <div class="card-header">
@@ -248,6 +284,7 @@
       </div>
     </div>
 
+    <!-- LOG -->
     <div id="tab-log" style="display:none;">
       <div class="card">
         <div class="card-header"><div class="card-title">LOG <span style="color:var(--lime);" id="log-day-title">DAY 1</span></div></div>
@@ -264,6 +301,7 @@
       <div id="my-log-entries"><div class="empty-state"><div class="es-icon">📋</div><p>No entries yet.</p></div></div>
     </div>
 
+    <!-- MY PROFILE -->
     <div id="tab-myprofile" style="display:none;">
       <div class="card">
         <div class="profile-header">
@@ -274,6 +312,14 @@
           <div class="stat-card"><div class="stat-num" id="p-streak">0</div><div class="stat-label">Streak</div></div>
           <div class="stat-card"><div class="stat-num" id="p-logs">0</div><div class="stat-label">Days logged</div></div>
           <div class="stat-card"><div class="stat-num" id="p-lost">0</div><div class="stat-label">lbs lost</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">ACCOUNTABILITY</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;text-align:center;">
+          <div><div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--lime);" id="p-checkin">0%</div><div style="font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:0.06em;">Check-in rate</div></div>
+          <div><div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--red);" id="p-missed">0</div><div style="font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:0.06em;">Days missed</div></div>
+          <div><div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--lime);" id="p-best-streak">0</div><div style="font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:0.06em;">Best streak</div></div>
         </div>
       </div>
       <div class="card"><div class="card-header"><div class="card-title">MILESTONES</div></div><div class="badges-row" id="badges-row"></div></div>
@@ -291,6 +337,7 @@
       </div>
     </div>
 
+    <!-- SQUAD -->
     <div id="tab-squad" style="display:none;">
       <div class="section-heading">THE <span>SQUAD</span></div>
       <div class="squad-grid" id="squad-grid"><div class="empty-state" style="grid-column:1/-1"><p>Loading squad...</p></div></div>
@@ -306,6 +353,46 @@
         </div>
       </div>
     </div>
+
+    <!-- CHALLENGES -->
+    <div id="tab-challenges" style="display:none;">
+      <div class="section-heading">WEEKLY <span>CHALLENGES</span></div>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:1.5rem;">Join a challenge and commit to it for the week. Your squad can see who's in.</p>
+      <div id="challenges-list"></div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div id="tab-settings" style="display:none;">
+      <div class="section-heading">APP <span>SETTINGS</span></div>
+
+      <div class="card">
+        <div class="card-header"><div class="card-title">DAILY REMINDER</div></div>
+        <p style="font-size:13px;color:var(--text2);margin-bottom:1.25rem;">Get a browser notification each day reminding you to log your entry. Make sure to allow notifications when prompted.</p>
+        <div class="reminder-row">
+          <div>
+            <label class="input-label" style="margin-bottom:6px;">Reminder time</label>
+            <input type="time" class="reminder-time-input" id="reminder-time" value="20:00">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:20px;">
+            <button class="btn-small" id="enable-reminder-btn" style="padding:10px 20px;">Enable reminder</button>
+            <button class="btn-small" id="disable-reminder-btn" style="background:none;border:1px solid var(--border);color:var(--text2);padding:10px 20px;">Disable</button>
+          </div>
+        </div>
+        <div class="notif-status" id="notif-status">Notifications not set up yet.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><div class="card-title">APPEARANCE</div></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-size:14px;font-weight:500;margin-bottom:3px;">Dark / Light mode</div>
+            <div style="font-size:12px;color:var(--text2);">Toggle the colour scheme</div>
+          </div>
+          <button class="theme-btn" id="theme-btn-settings" style="width:auto;padding:0 16px;font-size:13px;gap:8px;">Toggle theme</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -332,7 +419,18 @@ let currentUser = null;
 let weightChart = null;
 let allMembers = {};
 
-// CHALLENGE START DATE — stored in Firestore so everyone shares the same Day 1
+// WEEKLY MINI CHALLENGES
+const WEEKLY_CHALLENGES = [
+  { id:'no-sugar', icon:'🍬', title:'No Sugar Week', desc:'Cut out all added sugars for 7 days. No sweets, no soda, no hidden sugars.' },
+  { id:'10k-steps', icon:'👟', title:'10K Steps Daily', desc:'Hit 10,000 steps every single day this week. No exceptions.' },
+  { id:'gallon-water', icon:'💧', title:'Gallon of Water', desc:'Drink a full gallon of water every day for 7 days.' },
+  { id:'no-alcohol', icon:'🚫', title:'No Alcohol Week', desc:'Stay completely dry for 7 days. Water and gains only.' },
+  { id:'sleep-8', icon:'😴', title:'8 Hours Sleep', desc:'Get at least 8 hours of sleep every night this week.' },
+  { id:'meal-prep', icon:'🥗', title:'Meal Prep Sunday', desc:'Prep all your meals for the week on Sunday. No excuses.' },
+  { id:'cold-shower', icon:'🧊', title:'Cold Shower Daily', desc:'End every shower with 60 seconds of cold water. Builds mental toughness.' },
+  { id:'no-junk', icon:'🍔', title:'Zero Junk Food', desc:'No fast food, no chips, no processed snacks for the entire week.' },
+];
+
 async function getChallengeStart() {
   const ref = doc(db, 'meta', 'config');
   const snap = await getDoc(ref);
@@ -353,33 +451,66 @@ function normalizeName(name) { return name.trim().toLowerCase().replace(/\s+/g,'
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
+  setTimeout(()=>t.classList.remove('show'), 2500);
 }
 function getStreak(logs) {
-  if (!logs || !logs.length) return 0;
+  if (!logs||!logs.length) return 0;
   const dayNum = getDayNumber(); let streak = 0;
-  for (let d = dayNum; d >= 1; d--) { if (logs.some(l => l.day === d)) streak++; else break; }
+  for (let d = dayNum; d >= 1; d--) { if (logs.some(l=>l.day===d)) streak++; else break; }
   return streak;
 }
+function getBestStreak(logs) {
+  if (!logs||!logs.length) return 0;
+  const days = logs.map(l=>l.day).sort((a,b)=>a-b);
+  let best = 1, cur = 1;
+  for (let i = 1; i < days.length; i++) {
+    if (days[i] === days[i-1]+1) { cur++; best = Math.max(best, cur); }
+    else cur = 1;
+  }
+  return best;
+}
+function getMissedDays(logs) {
+  const dayNum = getDayNumber();
+  let missed = 0;
+  for (let d = 1; d <= dayNum; d++) { if (!logs.some(l=>l.day===d)) missed++; }
+  return missed;
+}
+function getCheckinRate(logs) {
+  const dayNum = getDayNumber();
+  if (dayNum === 0) return 0;
+  return Math.round((logs.length / dayNum) * 100);
+}
 function calcPct(sw, gw, cw) {
-  if (!sw || !gw || sw === gw) return 0;
-  return Math.min(100, Math.max(0, Math.round(Math.abs(sw - cw) / Math.abs(sw - gw) * 100)));
+  if (!sw||!gw||sw===gw) return 0;
+  return Math.min(100, Math.max(0, Math.round(Math.abs(sw-cw)/Math.abs(sw-gw)*100)));
+}
+function isMissing2Plus(logs) {
+  const dayNum = getDayNumber();
+  if (dayNum < 2) return false;
+  const missed = !logs.some(l=>l.day===dayNum);
+  const missedYesterday = !logs.some(l=>l.day===dayNum-1);
+  return missed && missedYesterday;
 }
 
 // THEME
-document.getElementById('theme-btn').addEventListener('click', () => {
-  const html = document.documentElement;
-  const isDark = html.getAttribute('data-theme') === 'dark';
-  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-  document.getElementById('theme-btn').textContent = isDark ? '☀️' : '🌙';
-  localStorage.setItem('arena_theme', isDark ? 'light' : 'dark');
-  if (weightChart) renderChart();
-});
-(function() {
+function applyTheme() {
   const t = localStorage.getItem('arena_theme') || 'dark';
   document.documentElement.setAttribute('data-theme', t);
-  document.getElementById('theme-btn').textContent = t === 'dark' ? '🌙' : '☀️';
-})();
+  const icon = t === 'dark' ? '🌙' : '☀️';
+  document.getElementById('theme-btn').textContent = icon;
+}
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const newTheme = isDark ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  const icon = newTheme === 'dark' ? '🌙' : '☀️';
+  document.getElementById('theme-btn').textContent = icon;
+  localStorage.setItem('arena_theme', newTheme);
+  if (weightChart) renderChart();
+}
+applyTheme();
+document.getElementById('theme-btn').addEventListener('click', toggleTheme);
+document.getElementById('theme-btn-settings').addEventListener('click', toggleTheme);
 
 // REALTIME LISTENER
 function startListening() {
@@ -389,10 +520,11 @@ function startListening() {
     const activeTab = document.querySelector('.tab.active');
     if (activeTab) {
       const tab = activeTab.dataset.tab;
-      if (tab === 'dashboard') renderDashboard();
-      else if (tab === 'myprofile') renderMyProfile();
-      else if (tab === 'squad') renderSquad();
-      else if (tab === 'log') renderMyEntries();
+      if (tab==='dashboard') renderDashboard();
+      else if (tab==='myprofile') renderMyProfile();
+      else if (tab==='squad') renderSquad();
+      else if (tab==='log') renderMyEntries();
+      else if (tab==='challenges') renderChallenges();
     }
   });
 }
@@ -400,16 +532,18 @@ function startListening() {
 // TABS
 document.querySelectorAll('.tab').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
     btn.classList.add('active');
-    ['dashboard','log','myprofile','squad'].forEach(t => {
-      document.getElementById('tab-' + t).style.display = t === btn.dataset.tab ? 'block' : 'none';
+    ['dashboard','log','myprofile','squad','challenges','settings'].forEach(t => {
+      document.getElementById('tab-'+t).style.display = t===btn.dataset.tab ? 'block' : 'none';
     });
     const tab = btn.dataset.tab;
-    if (tab === 'dashboard') renderDashboard();
-    else if (tab === 'myprofile') renderMyProfile();
-    else if (tab === 'squad') renderSquad();
-    else if (tab === 'log') { document.getElementById('log-day-title').textContent = 'DAY ' + getDayNumber(); renderMyEntries(); }
+    if (tab==='dashboard') renderDashboard();
+    else if (tab==='myprofile') renderMyProfile();
+    else if (tab==='squad') renderSquad();
+    else if (tab==='challenges') renderChallenges();
+    else if (tab==='log') { document.getElementById('log-day-title').textContent='DAY '+getDayNumber(); renderMyEntries(); }
+    else if (tab==='settings') renderSettings();
   });
 });
 
@@ -437,28 +571,28 @@ async function initOnboarding() {
 
 document.getElementById('enter-btn').addEventListener('click', async () => {
   const raw = document.getElementById('name-input').value.trim();
-  if (!raw || raw.length < 2) return showToast('Enter a valid name!');
+  if (!raw||raw.length<2) return showToast('Enter a valid name!');
   const key = normalizeName(raw);
   if (!key) return showToast('Please use letters in your name.');
   const btn = document.getElementById('enter-btn');
   btn.disabled = true; btn.textContent = 'CHECKING...';
-  const snap = await getDoc(doc(db, 'members', key));
+  const snap = await getDoc(doc(db,'members',key));
   if (snap.exists()) { selectUser(key); }
   else {
     currentUser = key;
     localStorage.setItem('arena_current_user', key);
-    await setDoc(doc(db, 'members', key), { displayName: raw, goal: null, startWeight: null, goalWeight: null, logs: [], hyped: {}, joinedDay: getDayNumber() });
+    await setDoc(doc(db,'members',key), { displayName:raw, goal:null, startWeight:null, goalWeight:null, logs:[], hyped:{}, challenges:[], joinedDay:getDayNumber() });
     showGoalSetup();
   }
   btn.disabled = false; btn.textContent = 'ENTER THE ARENA';
 });
 
-document.getElementById('name-input').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('enter-btn').click(); });
+document.getElementById('name-input').addEventListener('keydown', e => { if (e.key==='Enter') document.getElementById('enter-btn').click(); });
 
 async function selectUser(key) {
   currentUser = key; localStorage.setItem('arena_current_user', key);
-  const snap = await getDoc(doc(db, 'members', key));
-  if (!snap.exists() || !snap.data().goal) { showGoalSetup(); return; }
+  const snap = await getDoc(doc(db,'members',key));
+  if (!snap.exists()||!snap.data().goal) { showGoalSetup(); return; }
   showApp();
 }
 
@@ -483,11 +617,11 @@ document.getElementById('commit-btn').addEventListener('click', async () => {
   const sw = parseFloat(document.getElementById('start-weight').value);
   const gw = parseFloat(document.getElementById('goal-weight').value);
   const gt = document.getElementById('goal-text').value.trim();
-  if (!sw || !gw) return showToast('Enter your start and goal weight!');
+  if (!sw||!gw) return showToast('Enter your start and goal weight!');
   if (!gt) return showToast('Write your 90-day goal!');
   const btn = document.getElementById('commit-btn');
   btn.disabled = true; btn.textContent = 'LOCKING IN...';
-  await updateDoc(doc(db, 'members', currentUser), { startWeight: sw, goalWeight: gw, goal: gt });
+  await updateDoc(doc(db,'members',currentUser), { startWeight:sw, goalWeight:gw, goal:gt });
   document.getElementById('goal-setup').style.display = 'none';
   showApp(); showToast("Goal locked in! Let's go!");
   btn.disabled = false; btn.textContent = 'LOCK IN MY GOAL';
@@ -502,43 +636,52 @@ function showApp() {
   document.getElementById('main-app').classList.add('visible');
   document.getElementById('day-badge').textContent = `DAY ${getDayNumber()} / 90`;
   startListening();
+  scheduleReminderCheck();
 }
 
 // DASHBOARD
 function renderDashboard() {
   const me = allMembers[currentUser]; if (!me) return;
   const dayNum = getDayNumber();
-  document.getElementById('stat-day').textContent = dayNum;
-  document.getElementById('stat-members').textContent = Object.keys(allMembers).length;
   const logs = me.logs || [];
+  document.getElementById('stat-day').textContent = dayNum;
   document.getElementById('stat-streak').textContent = getStreak(logs);
+  document.getElementById('stat-checkin').textContent = getCheckinRate(logs) + '%';
   document.getElementById('dashboard-goal-text').textContent = me.goal || '—';
-  document.getElementById('goal-days-left').textContent = (90 - dayNum + 1) + ' days left';
+  document.getElementById('goal-days-left').textContent = (90-dayNum+1) + ' days left';
 
   const sw = me.startWeight, gw = me.goalWeight;
   const lastW = [...logs].sort((a,b)=>b.day-a.day).find(l=>l.weight);
   const cw = lastW ? lastW.weight : sw;
   const pct = calcPct(sw, gw, cw);
-  document.getElementById('d-sw').textContent = sw ? sw + ' lbs' : 'Start';
-  document.getElementById('d-gw').textContent = gw ? gw + ' lbs' : 'Goal';
-  document.getElementById('d-pct').textContent = pct + '%';
-  document.getElementById('d-fill').style.width = pct + '%';
+  document.getElementById('d-sw').textContent = sw ? sw+' lbs' : 'Start';
+  document.getElementById('d-gw').textContent = gw ? gw+' lbs' : 'Goal';
+  document.getElementById('d-pct').textContent = pct+'%';
+  document.getElementById('d-fill').style.width = pct+'%';
 
   const members = Object.entries(allMembers).filter(([,m])=>m.goal).sort(([,a],[,b])=>getStreak(b.logs||[])-getStreak(a.logs||[]));
   const lb = document.getElementById('leaderboard-list');
-  if (!members.length) { lb.innerHTML = '<div class="empty-state"><p>No members yet.</p></div>'; }
+  if (!members.length) { lb.innerHTML='<div class="empty-state"><p>No members yet.</p></div>'; }
   else {
     lb.innerHTML = members.map(([key,m],i) => {
       const streak = getStreak(m.logs||[]);
-      const mLast = [...(m.logs||[])].sort((a,b)=>b.day-a.day).find(l=>l.weight);
-      const lost = m.startWeight && mLast ? Math.round((m.startWeight - mLast.weight)*10)/10 : 0;
+      const mLogs = m.logs||[];
+      const mLast = [...mLogs].sort((a,b)=>b.day-a.day).find(l=>l.weight);
+      const lost = m.startWeight&&mLast ? Math.round((m.startWeight-mLast.weight)*10)/10 : 0;
+      const missed = getMissedDays(mLogs);
+      const rate = getCheckinRate(mLogs);
       const myH = (me.hyped||{})[key];
+      const shamed = isMissing2Plus(mLogs);
       return `<div class="lb-row">
         <div class="lb-rank ${i<3?'top':''}">${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</div>
         <div class="lb-avatar">${getInitials(m.displayName)}</div>
         <div class="lb-info">
-          <div class="lb-name">${m.displayName}</div>
+          <div class="lb-name">${m.displayName}${shamed?' 🔴':''}</div>
           <div class="lb-goal">${m.goal}</div>
+          <div class="lb-pills">
+            <span class="lb-pill good">${rate}% rate</span>
+            ${missed>0?`<span class="lb-pill bad">${missed} missed</span>`:''}
+          </div>
           ${key!==currentUser?`<button class="hype-btn ${myH?'hyped':''}" data-hype="${key}">${myH?'⚡ Hyped':'⚡ Hype'}</button>`:''}
         </div>
         <div class="lb-right">
@@ -553,7 +696,7 @@ function renderDashboard() {
         const me2 = allMembers[currentUser];
         const hyped = { ...(me2.hyped||{}) };
         hyped[mk] = !hyped[mk];
-        await updateDoc(doc(db, 'members', currentUser), { hyped });
+        await updateDoc(doc(db,'members',currentUser), { hyped });
         showToast(hyped[mk] ? '⚡ Hyped up!' : 'Hype removed');
       });
     });
@@ -587,15 +730,15 @@ document.getElementById('save-log-btn').addEventListener('click', async () => {
   const ex = document.getElementById('log-exercise').value.trim();
   const food = document.getElementById('log-food').value.trim();
   const notes = document.getElementById('log-notes').value.trim();
-  if (!w && !ex && !food) return showToast('Log at least your weight or activity!');
+  if (!w&&!ex&&!food) return showToast('Log at least your weight or activity!');
   const me = allMembers[currentUser];
   const dayNum = getDayNumber();
   const logs = [...(me.logs||[])].filter(l=>l.day!==dayNum);
   logs.push({ day:dayNum, date:new Date().toISOString(), weight:w||null, calories:cal||null, exercise:ex, food, notes });
   logs.sort((a,b)=>b.day-a.day);
-  await updateDoc(doc(db,'members',currentUser),{logs});
+  await updateDoc(doc(db,'members',currentUser), { logs });
   ['log-weight','log-calories','log-exercise','log-food','log-notes'].forEach(id=>document.getElementById(id).value='');
-  showToast('Day '+dayNum+' logged!');
+  showToast('Day '+dayNum+' logged! 💪');
 });
 
 function renderMyEntries() {
@@ -620,7 +763,7 @@ function renderMyEntries() {
       if (!confirm('Delete Day '+btn.dataset.day+' entry?')) return;
       const me2 = allMembers[currentUser];
       const newLogs = (me2.logs||[]).filter(l=>l.day!=btn.dataset.day);
-      await updateDoc(doc(db,'members',currentUser),{logs:newLogs});
+      await updateDoc(doc(db,'members',currentUser), { logs:newLogs });
       showToast('Entry deleted');
     });
   });
@@ -634,14 +777,20 @@ function renderMyProfile() {
   document.getElementById('p-goal-tag').textContent = me.goal || 'No goal set';
   const logs = me.logs||[];
   const streak = getStreak(logs);
+  const missed = getMissedDays(logs);
+  const rate = getCheckinRate(logs);
+  const best = getBestStreak(logs);
   document.getElementById('p-streak').textContent = streak;
   document.getElementById('p-logs').textContent = logs.length;
   const lastW = [...logs].sort((a,b)=>b.day-a.day).find(l=>l.weight);
-  const lost = me.startWeight && lastW ? Math.round((me.startWeight-lastW.weight)*10)/10 : 0;
-  document.getElementById('p-lost').textContent = lost > 0 ? lost : 0;
-  const pct = calcPct(me.startWeight, me.goalWeight, lastW ? lastW.weight : me.startWeight);
-  document.getElementById('p-sw').textContent = me.startWeight ? me.startWeight+' lbs' : 'Start';
-  document.getElementById('p-gw').textContent = me.goalWeight ? me.goalWeight+' lbs' : 'Goal';
+  const lost = me.startWeight&&lastW ? Math.round((me.startWeight-lastW.weight)*10)/10 : 0;
+  document.getElementById('p-lost').textContent = lost>0?lost:0;
+  document.getElementById('p-checkin').textContent = rate+'%';
+  document.getElementById('p-missed').textContent = missed;
+  document.getElementById('p-best-streak').textContent = best;
+  const pct = calcPct(me.startWeight, me.goalWeight, lastW?lastW.weight:me.startWeight);
+  document.getElementById('p-sw').textContent = me.startWeight?me.startWeight+' lbs':'Start';
+  document.getElementById('p-gw').textContent = me.goalWeight?me.goalWeight+' lbs':'Goal';
   document.getElementById('p-pct').textContent = pct+'%';
   document.getElementById('p-fill').style.width = pct+'%';
   const badges = [
@@ -653,6 +802,7 @@ function renderMyProfile() {
     {label:'90 Days!', earned:logs.length>=80},
     {label:'First 5 lbs', earned:me.startWeight&&logs.some(l=>l.weight&&me.startWeight-l.weight>=5)},
     {label:'First 10 lbs', earned:me.startWeight&&logs.some(l=>l.weight&&me.startWeight-l.weight>=10)},
+    {label:'90% Check-in', earned:rate>=90},
   ];
   document.getElementById('badges-row').innerHTML = badges.map(b=>`<span class="badge-pill ${b.earned?'earned':''}">${b.earned?'✓ ':''}${b.label}</span>`).join('');
 }
@@ -680,13 +830,21 @@ function renderSquad() {
   if (!members.length) { grid.innerHTML='<div class="empty-state" style="grid-column:1/-1"><p>No squad members yet.</p></div>'; return; }
   grid.innerHTML = members.map(([key,m])=>{
     const streak = getStreak(m.logs||[]);
+    const missed = getMissedDays(m.logs||[]);
+    const rate = getCheckinRate(m.logs||[]);
+    const shamed = isMissing2Plus(m.logs||[]);
     const isMe = key===currentUser;
-    return `<div class="squad-card" data-member="${key}">
+    return `<div class="squad-card ${shamed?'shame':''}" data-member="${key}">
       ${isMe?`<button class="squad-delete-btn" data-delete-me="1" title="Delete my profile">🗑</button>`:''}
       <div class="squad-card-avatar">${getInitials(m.displayName)}</div>
       <div class="squad-card-name">${m.displayName}${isMe?' (you)':''}</div>
       <div class="squad-card-goal">${m.goal}</div>
       <div class="squad-card-streak">${streak} day streak 🔥</div>
+      <div class="squad-card-stats">
+        <span class="squad-stat-pill good">${rate}%</span>
+        ${missed>0?`<span class="squad-stat-pill bad">${missed} missed</span>`:''}
+        ${shamed?`<span class="squad-stat-pill bad">MIA 🔴</span>`:''}
+      </div>
     </div>`;
   }).join('');
   grid.querySelectorAll('.squad-card').forEach(card => {
@@ -722,13 +880,113 @@ document.getElementById('close-mp-btn').addEventListener('click', () => {
   document.getElementById('member-profile').style.display = 'none';
 });
 
+// CHALLENGES
+function renderChallenges() {
+  const me = allMembers[currentUser];
+  const myJoined = me ? (me.challenges || []) : [];
+  const container = document.getElementById('challenges-list');
+
+  // Count how many people joined each challenge
+  const joinCounts = {};
+  Object.values(allMembers).forEach(m => {
+    (m.challenges||[]).forEach(cid => { joinCounts[cid] = (joinCounts[cid]||0)+1; });
+  });
+
+  container.innerHTML = WEEKLY_CHALLENGES.map(c => {
+    const joined = myJoined.includes(c.id);
+    const count = joinCounts[c.id] || 0;
+    return `<div class="challenge-item ${joined?'joined':''}">
+      <div class="challenge-icon">${c.icon}</div>
+      <div class="challenge-info">
+        <div class="challenge-title">${c.title}</div>
+        <div class="challenge-desc">${c.desc}</div>
+        <div class="challenge-meta">${count > 0 ? count+' squad member'+(count>1?'s':'')+' in' : 'No one yet — be first'}</div>
+      </div>
+      <button class="challenge-join-btn ${joined?'joined':''}" data-challenge="${c.id}">${joined?'✓ Joined':'Join'}</button>
+    </div>`;
+  }).join('');
+
+  container.querySelectorAll('[data-challenge]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const cid = btn.dataset.challenge;
+      const me2 = allMembers[currentUser];
+      const challenges = [...(me2.challenges||[])];
+      const idx = challenges.indexOf(cid);
+      if (idx > -1) challenges.splice(idx, 1);
+      else challenges.push(cid);
+      await updateDoc(doc(db,'members',currentUser), { challenges });
+      showToast(idx > -1 ? 'Left challenge' : 'Challenge joined! 💪');
+    });
+  });
+}
+
+// SETTINGS / REMINDER
+function renderSettings() {
+  const perm = Notification.permission;
+  const status = document.getElementById('notif-status');
+  const savedTime = localStorage.getItem('arena_reminder_time') || '20:00';
+  document.getElementById('reminder-time').value = savedTime;
+  if (perm === 'granted') {
+    const enabled = localStorage.getItem('arena_reminder_enabled') === 'true';
+    status.textContent = enabled ? `✓ Reminder set for ${savedTime} daily.` : 'Notifications allowed but reminder is off.';
+    status.className = 'notif-status granted';
+  } else if (perm === 'denied') {
+    status.textContent = '✗ Notifications blocked. Enable them in your browser settings.';
+    status.className = 'notif-status denied';
+  } else {
+    status.textContent = 'Click "Enable reminder" to allow notifications.';
+    status.className = 'notif-status';
+  }
+}
+
+document.getElementById('enable-reminder-btn').addEventListener('click', async () => {
+  const time = document.getElementById('reminder-time').value;
+  if (!time) return showToast('Pick a time first!');
+  const perm = await Notification.requestPermission();
+  if (perm === 'granted') {
+    localStorage.setItem('arena_reminder_time', time);
+    localStorage.setItem('arena_reminder_enabled', 'true');
+    showToast('Reminder set for ' + time + ' daily!');
+    renderSettings();
+  } else {
+    showToast('Notifications blocked — check browser settings');
+    renderSettings();
+  }
+});
+
+document.getElementById('disable-reminder-btn').addEventListener('click', () => {
+  localStorage.setItem('arena_reminder_enabled', 'false');
+  showToast('Reminder disabled');
+  renderSettings();
+});
+
+function scheduleReminderCheck() {
+  setInterval(() => {
+    const enabled = localStorage.getItem('arena_reminder_enabled') === 'true';
+    if (!enabled || Notification.permission !== 'granted') return;
+    const time = localStorage.getItem('arena_reminder_time') || '20:00';
+    const [h, mn] = time.split(':').map(Number);
+    const now = new Date();
+    if (now.getHours()===h && now.getMinutes()===mn) {
+      const me = allMembers[currentUser];
+      const dayNum = getDayNumber();
+      const alreadyLogged = me && (me.logs||[]).some(l=>l.day===dayNum);
+      if (!alreadyLogged) {
+        new Notification('The Arena 🔥', { body: `Day ${dayNum} — you haven't logged yet! Don't break your streak.`, icon: '' });
+      }
+      // Only fire once per minute
+      localStorage.setItem('arena_last_reminder', now.toDateString()+'-'+h+'-'+mn);
+    }
+  }, 60000);
+}
+
 // INIT
 (async function init() {
   const saved = localStorage.getItem('arena_current_user');
   if (saved) {
     try {
       const snap = await getDoc(doc(db,'members',saved));
-      if (snap.exists() && snap.data().goal) { currentUser=saved; showApp(); return; }
+      if (snap.exists()&&snap.data().goal) { currentUser=saved; showApp(); return; }
     } catch(e) {}
   }
   await initOnboarding();
