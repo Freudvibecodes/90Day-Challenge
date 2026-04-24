@@ -432,13 +432,9 @@ const WEEKLY_CHALLENGES = [
 ];
 
 async function getChallengeStart() {
-  const ref = doc(db, 'meta', 'config');
-  const snap = await getDoc(ref);
-  if (snap.exists() && snap.data().startDate) return new Date(snap.data().startDate);
-  const d = new Date().toISOString().split('T')[0];
-  await setDoc(ref, { startDate: d }, { merge: true });
-  return new Date(d);
+  return new Date('2026-04-27');
 }
+  
 
 const CHALLENGE_START = await getChallengeStart();
 
