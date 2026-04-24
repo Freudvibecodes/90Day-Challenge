@@ -223,6 +223,10 @@
   <div class="onboard-box">
     <div class="onboard-logo">THE ARENA</div>
     <div class="onboard-sub">90 Day Challenge</div>
+<div style="background:var(--lime-dim);border:1px solid rgba(198,241,53,0.3);border-radius:8px;padding:12px 20px;margin-bottom:2rem;text-align:center;">
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--lime);letter-spacing:0.06em;">CHALLENGE STARTS APRIL 27TH</div>
+  <div style="font-size:12px;color:var(--text2);margin-top:4px;">Monday 2026 · Set your goal and get ready 💪</div>
+</div>
     <label class="input-label">Enter your name to join</label>
     <input class="input-field" id="name-input" placeholder="Your name..." maxlength="30">
     <button class="btn-lime" id="enter-btn">ENTER THE ARENA</button>
@@ -258,6 +262,13 @@
 
     <!-- DASHBOARD -->
     <div id="tab-dashboard">
+      <div style="background:var(--lime-dim);border:1px solid rgba(198,241,53,0.3);border-radius:8px;padding:14px 20px;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between;">
+  <div>
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--lime);letter-spacing:0.06em;">CHALLENGE STARTS APRIL 27TH</div>
+    <div style="font-size:12px;color:var(--text2);margin-top:2px;">Monday 2026 · Lock in your goal and get ready 💪</div>
+  </div>
+  <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--lime);text-align:right;" id="countdown-banner"></div>
+</div>
       <div class="stats-row">
         <div class="stat-card"><div class="stat-num" id="stat-day">1</div><div class="stat-label">Day</div></div>
         <div class="stat-card"><div class="stat-num" id="stat-streak">0</div><div class="stat-label">My Streak</div></div>
@@ -633,6 +644,8 @@ function showApp() {
   document.getElementById('day-badge').textContent = `DAY ${getDayNumber()} / 90`;
   startListening();
   scheduleReminderCheck();
+  updateCountdown();
+setInterval(updateCountdown, 60000);
 }
 
 // DASHBOARD
@@ -955,6 +968,12 @@ document.getElementById('disable-reminder-btn').addEventListener('click', () => 
   showToast('Reminder disabled');
   renderSettings();
 });
+function updateCountdown() {
+  const el = document.getElementById('countdown-banner');
+  if (!el) return;
+  const diff = Math.ceil((new Date('2026-04-27') - new Date()) / 86400000);
+  el.textContent = diff > 0 ? diff + ' days to go' : 'WE ARE LIVE 🔥';
+}
 
 function scheduleReminderCheck() {
   setInterval(() => {
