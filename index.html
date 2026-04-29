@@ -269,9 +269,15 @@
   </div>
   <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--lime);text-align:right;" id="countdown-banner"></div>
 </div>
+      <div class="card" style="text-align:center;padding:2rem;margin-bottom:1.25rem;background:var(--lime);border-color:var(--lime);">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:0.1em;color:#0a0a0a;text-transform:uppercase;margin-bottom:8px;">You are on</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:100px;color:#0a0a0a;line-height:1;" id="big-day-num">1</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:#0a0a0a;letter-spacing:0.06em;line-height:1;">OF 90 DAYS</div>
+        <div style="font-size:13px;color:rgba(0,0,0,0.5);margin-top:10px;" id="big-days-left">89 days remaining</div>
+      </div>
       <div class="stats-row">
-        <div class="stat-card"><div class="stat-num" id="stat-day">1</div><div class="stat-label">Day</div></div>
         <div class="stat-card"><div class="stat-num" id="stat-streak">0</div><div class="stat-label">My Streak</div></div>
+        <div class="stat-card"><div class="stat-num" id="stat-members">0</div><div class="stat-label">Members</div></div>
         <div class="stat-card"><div class="stat-num" id="stat-checkin">0%</div><div class="stat-label">Check-in rate</div></div>
       </div>
       <div class="card">
@@ -443,7 +449,7 @@ const WEEKLY_CHALLENGES = [
 ];
 
 async function getChallengeStart() {
-  return new Date('2026-04-27');
+  return new Date('2026-04-26');
 }
   
 
@@ -653,7 +659,8 @@ function renderDashboard() {
   const me = allMembers[currentUser]; if (!me) return;
   const dayNum = getDayNumber();
   const logs = me.logs || [];
-  document.getElementById('stat-day').textContent = dayNum;
+  document.getElementById('big-day-num').textContent = dayNum;
+document.getElementById('big-days-left').textContent = (90 - dayNum) + ' days remaining';
   document.getElementById('stat-streak').textContent = getStreak(logs);
   document.getElementById('stat-checkin').textContent = getCheckinRate(logs) + '%';
   document.getElementById('dashboard-goal-text').textContent = me.goal || '—';
