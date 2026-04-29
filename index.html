@@ -660,7 +660,7 @@ function renderDashboard() {
   const dayNum = getDayNumber();
   const logs = me.logs || [];
   document.getElementById('big-day-num').textContent = dayNum;
-document.getElementById('big-days-left').textContent = (90 - dayNum) + ' days remaining';
+document.getElementById('big-days-left').textContent = (91 - dayNum) + ' days remaining';
   document.getElementById('stat-streak').textContent = getStreak(logs);
   document.getElementById('stat-checkin').textContent = getCheckinRate(logs) + '%';
   document.getElementById('dashboard-goal-text').textContent = me.goal || '—';
